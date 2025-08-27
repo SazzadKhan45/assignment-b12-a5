@@ -26,11 +26,13 @@ function gatCallBtn(id1, id2){
             `)
         const coinBalance = totalCoinBalance - callFree;
         document.getElementById('current-coin-balance').innerText = coinBalance;
+
     }
     else {
         alert(`
-                Your Cion Balance is : ${totalCoinBalance}
+                Your Cion Balance is : ${totalCoinBalance} 0
             `)
+            return;
     }
     // 
     const callHistory = document.getElementById('call-history');

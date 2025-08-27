@@ -113,21 +113,6 @@ document.querySelectorAll('.copy-cont-number').forEach(function (heart) {
             heartCountNumber++;
         }
 
-        // const callNumber = document.querySelectorAll('.call-number');
-        // for (let number of callNumber) {
-        //     const numberElement = number;
-        //     const numberToCopy = numberElement.textContent.trim();
-        //     console.log(numberToCopy)
-
-        //     // 
-        //     navigator.clipboard.writeText(numberToCopy).then(() => {
-        //         // console.log("Copied number:", numberToCopy);
-        //         // Optional: Show success message or paste somewhere
-        //     }).catch(err => {
-        //         console.error("Failed to copy:", err);
-        //     });
-        // }
-
         const cards = document.querySelectorAll('.card-number');
 
         cards.forEach(card => {
