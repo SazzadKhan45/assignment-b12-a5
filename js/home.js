@@ -1,71 +1,61 @@
 // All services call
 document.getElementById('all-services').addEventListener('click', function () {
-    const totalCoinBalance = getNumberCovert('current-coin-balance');
-    console.log(totalCoinBalance)
-    // Call fee
-    const callFree = 20;
 
-    // Service name & number
-    const serviceName = document.getElementById('national-emergency').innerText;
-    const serviceNumber = document.getElementById('number999').innerText;
+    // call reuse function
+    gatCallBtn('national-emergency', 'number999');
 
-    // apply condition
-    if (totalCoinBalance > 0) {
-        alert(`
-            ${serviceName}
-            Calling  : ${serviceNumber}
-            `)
-        const coinBalance = totalCoinBalance - callFree;
-        document.getElementById('current-coin-balance').innerText = coinBalance;
-    }
-    else {
-        alert(`
-                Your Cion Balance is : ${totalCoinBalance}
-            `)
-    }
-
-    // call history add
-
-    // const callHistory = document.getElementById('call-history');
-    // console.log(callHistory);
-
-    // const div = document.createElement('div');
-    // const localTime = now.toLocaleTimeString();
-
-    // div.innerHTML = `
-    //     <p>${serviceName}</p>
-    //     <p>${localTime}</p>
-    // `;
-    // callHistory.appendChild(div);
-
-    const callHistory = document.getElementById('call-history');
-    console.log(callHistory);
-
-    const div = document.createElement('div');
-    div.classList.add('mx-4', 'my-4', 'rounded-lg','p-4', 'bg-gray-100');
+});
 
 
-    // ✅ Define 'now' before using it
-    const now = new Date();
-    const localTime = now.toLocaleTimeString();
+// Ambulance Services
+document.getElementById('ambulance-call').addEventListener('click', function () {
 
-    // ✅ Example service name (you need to define this based on your context)
-    div.innerHTML = `
-    <p class ="text-lg font-medium mb-2">${serviceName}</p>
-    <p>Calling time : ${localTime}</p>
-`;
+    // call reuse function
+    gatCallBtn('ambulance-number', 'number801944');
 
-    callHistory.appendChild(div);
+});
 
+// FireService Emergency Number
+document.getElementById('fire-service').addEventListener('click', function () {
 
+    // call reuse function
+    gatCallBtn('fireService', 'number556622');
 
+});
+
+// Police Hotline Number
+document.getElementById('police-hotline').addEventListener('click', function () {
+
+    // call reuse function
+    gatCallBtn('police-service', 'number145');
+
+});
+
+// Bangladesh-Railway Number
+document.getElementById('railway-service').addEventListener('click', function () {
+
+    // call reuse function
+    gatCallBtn('railwayService', 'railway-number');
+
+});
+
+// NGo Emergency Number
+document.getElementById('ngo-services').addEventListener('click', function () {
+
+    // call reuse function
+    gatCallBtn('ngo-emergency', 'igo-call-number');
 
 });
 
 
 
+// Clear btn function add
+document.getElementById('clear-btn').addEventListener('click', function () {
+    const clearAllCallingHistory = document.getElementById('call-history')
 
+    clearAllCallingHistory.innerHTML = '';
 
+});
 
 
 
