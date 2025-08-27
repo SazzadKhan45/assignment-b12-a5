@@ -22,5 +22,6 @@ document.querySelectorAll('.hart-icon').forEach(function(heart) {
             heartCountNumber++;
         }
 
+
     });
 });
