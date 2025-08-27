@@ -1,7 +1,7 @@
 // Coin balance function
 function getNumberCovert(id){
-    const coinNumberStr = document.getElementById(id);
-    const coinNumber = parseInt(coinNumberStr.textContent);
+    const coinNumberStr = document.getElementById(id).innerText;
+    const coinNumber = parseInt(coinNumberStr);
     return coinNumber;
 }
 
