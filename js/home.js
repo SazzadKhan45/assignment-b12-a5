@@ -7,14 +7,6 @@ document.getElementById('all-services').addEventListener('click', function () {
 });
 
 
-// Ambulance Services
-document.getElementById('ambulance-call').addEventListener('click', function () {
-
-    // call reuse function
-    gatCallBtn('ambulance-number', 'number801944');
-
-});
-
 // FireService Emergency Number
 document.getElementById('fire-service').addEventListener('click', function () {
 
@@ -47,7 +39,13 @@ document.getElementById('ngo-services').addEventListener('click', function () {
 
 });
 
+// Ambulance Services
+document.getElementById('ambulance-call-btn').addEventListener('click', function () {
 
+    // call reuse function
+    gatCallBtn('ambulance-number', 'number801944');
+
+});
 
 // Clear btn function add
 document.getElementById('clear-btn').addEventListener('click', function () {
@@ -64,75 +62,58 @@ document.getElementById('clear-btn').addEventListener('click', function () {
 document.querySelectorAll('.hart-icon').forEach(function (heart) {
     heart.addEventListener('click', function () {
         // Get the element that shows the count
-        const heartCountElement = document.getElementById('heart-count');
-
-        // Convert current text to number
-        let totalHeart = parseInt(heartCountElement.textContent) || 0;
-
-        // Increase count by 1
-        totalHeart++;
-
-        // Update the text
-        heartCountElement.textContent = totalHeart;
-
-        // Example: if you want to loop through all hearts
-        const allHeartIcon = document.getElementsByClassName('hart-icon');
-        let heartCountNumber = 0;
-
-        for (let heartIcon of allHeartIcon) {
-            // just counting how many hearts exist in DOM
-            heartCountNumber++;
-        }
-
+        getCountValues('heart-count');
 
     });
 });
 
+
+
 // Copy count number
 document.querySelectorAll('.copy-cont-number').forEach(function (heart) {
     heart.addEventListener('click', function () {
-        // console.log('Clicked')
-        // Get the element that shows the count
-        const heartCountElement = document.getElementById('copy-count');
-
-        // Convert current text to number
-        let totalHeart = parseInt(heartCountElement.textContent) || 0;
-
-        // Increase count by 1
-        totalHeart++;
-
-        // Update the text
-        heartCountElement.textContent = totalHeart;
-
-        // Example: if you want to loop through all hearts
-        const allHeartIcon = document.getElementsByClassName('copy-count');
-        let heartCountNumber = 0;
-
-        for (let heartIcon of allHeartIcon) {
-            // just counting how many hearts exist in DOM
-            heartCountNumber++;
-        }
-
-        const cards = document.querySelectorAll('.card-number');
-
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                const numberElement = card.querySelector('.call-number');
-                if (numberElement) {
-                    const numberToCopy = numberElement.textContent.trim();
-                    navigator.clipboard.writeText(numberToCopy).then(() => {
-                        console.log(`Copied: ${numberToCopy}`);
-                        // Optional: show a small toast or alert
-                    }).catch(err => {
-                        console.error("Failed to copy:", err);
-                    });
-                }
-            });
-        });
-
-
+        // alert message
+        alert('Increase the copy count');
+        // call the function
+        getCountValues('copy-count');
 
     });
+});
+
+// All services call number
+document.getElementById('copy999').addEventListener('click', function () {
+    getServiceNumberCopy('number999');
+
+});
+
+// FireService Emergency Number
+document.getElementById('copy556622').addEventListener('click', function () {
+    getServiceNumberCopy('number556622');
+
+});
+
+// Police Hotline Number
+document.getElementById('copy04455').addEventListener('click', function () {
+    getServiceNumberCopy('railway-number');
+
+});
+
+// Bangladesh-Railway Number
+document.getElementById('copy014527').addEventListener('click', function () {
+    getServiceNumberCopy('number145');
+
+});
+
+// NGo Emergency Number
+document.getElementById('copy22114').addEventListener('click', function () {
+    getServiceNumberCopy('igo-call-number');
+
+});
+
+// Ambulance Services number copy
+document.getElementById('copy801944').addEventListener('click', function () {
+    getServiceNumberCopy('number801944');
+
 });
 
 

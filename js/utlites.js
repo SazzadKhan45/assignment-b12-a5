@@ -1,5 +1,5 @@
 // Coin balance function
-function getNumberCovert(id){
+function getNumberCovert(id) {
     const coinNumberStr = document.getElementById(id).innerText;
     const coinNumber = parseInt(coinNumberStr);
     return coinNumber;
@@ -7,7 +7,7 @@ function getNumberCovert(id){
 
 // Call button reuse function
 
-function gatCallBtn(id1, id2){
+function gatCallBtn(id1, id2) {
     const totalCoinBalance = getNumberCovert('current-coin-balance');
     console.log(totalCoinBalance)
     // Call fee
@@ -30,16 +30,16 @@ function gatCallBtn(id1, id2){
     }
     else {
         alert(`
-                Your Cion Balance is : ${totalCoinBalance} 0
+                Your Cion Balance is : ${totalCoinBalance}0
             `)
-            return;
+        return;
     }
     // 
     const callHistory = document.getElementById('call-history');
 
 
     const div = document.createElement('div');
-    div.classList.add('mx-4', 'my-4', 'rounded-lg','p-4', 'bg-gray-100');
+    div.classList.add('mx-4', 'my-4', 'rounded-lg', 'p-4', 'bg-gray-100');
 
 
     // 
@@ -53,4 +53,26 @@ function gatCallBtn(id1, id2){
 `;
 
     callHistory.appendChild(div);
+};
+
+// Count heart and copy 
+
+function getCountValues(className) {
+    const heartCountElement = document.getElementById(className);
+
+    // Convert current text to number
+    let totalHeart = parseInt(heartCountElement.textContent) || 0;
+
+    // Increase count by 1
+    totalHeart++;
+
+    // Update the text
+    heartCountElement.textContent = totalHeart;
+};
+
+// click copy btn copy the service number
+function getServiceNumberCopy(id){
+    const number = document.getElementById(id).textContent.trim();
+    navigator.clipboard.writeText(number);
 }
+
