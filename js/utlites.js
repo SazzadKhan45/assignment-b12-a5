@@ -39,7 +39,7 @@ function gatCallBtn(id1, id2) {
 
 
     const div = document.createElement('div');
-    div.classList.add('mx-4', 'my-4', 'rounded-lg', 'p-4', 'bg-gray-100');
+    div.classList.add('flex','justify-between', 'items-center', 'mx-4', 'my-4', 'rounded-lg', 'p-4', 'bg-gray-100');
 
 
     //Time set up and Format 
