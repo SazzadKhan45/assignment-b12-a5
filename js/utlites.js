@@ -42,14 +42,30 @@ function gatCallBtn(id1, id2) {
     div.classList.add('mx-4', 'my-4', 'rounded-lg', 'p-4', 'bg-gray-100');
 
 
-    // 
+    //Time set up and Format 
     const now = new Date();
-    const localTime = now.toLocaleTimeString();
+
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    const amPm = hours >= 12 ? 'PM' : 'AM';
+
+    // Convert to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    // Add leading zero to minutes and seconds
+    const strMinutes = minutes < 10 ? '0' + minutes : minutes;
+
+
+    // set a div
 
     div.innerHTML = `
-    <p class ="text-lg font-medium">${serviceName}</p>
-    <p class ="text-lg font-medium py-2">Call Number : ${serviceNumber}</p>
-    <p>Calling time : ${localTime}</p>
+    <div>
+        <p class ="font-medium">${serviceName}</p>
+        <p class ="py-2">Call Number : ${serviceNumber}</p>
+    </div>
+    <p>${hours}:${strMinutes} ${amPm}</p>
 `;
 
     callHistory.appendChild(div);
@@ -71,7 +87,7 @@ function getCountValues(className) {
 };
 
 // click copy btn copy the service number
-function getServiceNumberCopy(id){
+function getServiceNumberCopy(id) {
     const number = document.getElementById(id).textContent.trim();
     navigator.clipboard.writeText(number);
 }
